@@ -1,0 +1,19 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.bg {
+	padding: 20px;
+}
+ul, li {
+	list-style: none;
+	margin: 10px 0;
+}
+.basemsg li, .contact li{
+	/*background-color: green;*/
+	float: left;
+	margin-right: 20px;
+}
+.basemsg, .contact {
+	overflow: auto;
+}
