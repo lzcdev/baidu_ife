@@ -1,0 +1,34 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.bg {
+	padding: 20px;
+}
+ul, li {
+	list-style: none;
+	margin: 10px 0;
+}
+.basemsg li,
+.contact li {
+	float: left;
+	margin-right: 20px;
+}
+.basemsg,
+.contact {
+	overflow: auto;
+}
+h1 {
+	float: left;
+	background-color: #69A7F8;
+	color: white;
+	width: 200px;
+	padding-top: 50px;
+	text-align: center;
+	height: 100%;
+
+}
+.ul {
+	float: left;
+	margin-left: 20px;
+}
