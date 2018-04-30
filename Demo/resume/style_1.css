@@ -9,11 +9,12 @@ ul, li {
 	list-style: none;
 	margin: 10px 0;
 }
-.basemsg li, .contact li{
-	/*background-color: green;*/
+.basemsg li,
+.contact li {
 	float: left;
 	margin-right: 20px;
 }
-.basemsg, .contact {
+.basemsg,
+.contact {
 	overflow: auto;
 }
