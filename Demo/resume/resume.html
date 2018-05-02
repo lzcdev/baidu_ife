@@ -7,6 +7,13 @@
 	<link rel="stylesheet" type="text/css" href="style_3.css">
 </head>
 <body>
+
+        <section id="toggleStyle">
+            <button>Style1</button>
+            <button>Style2</button>
+            <button>Style3</button>
+        </section>
+
 	<div class="bg">
 		<h1>简历</h1>
 		<ul class="ul">
@@ -67,5 +74,16 @@
 			</li>
 		</ul>
 	</div>
+
+
+	    <script>        
+        let link = document.getElementsByTagName('link')[0];
+        let buttonList=document.querySelectorAll('button');
+        for (let [index,item] of buttonList.entries()) {
+            item.onclick=function() {
+                link.href = `./style_${index+1}.css`;
+            }
+        }
+    </script>
 </body>
 </html>
