@@ -1,0 +1,46 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.bg {
+	padding: 20px;
+	position: relative;
+}
+ul, li {
+	list-style: none;
+	margin: 0 0 1px 0;
+}
+.basemsg li,
+.contact li {
+	float: left;
+	margin-right: 20px;
+}
+.basemsg,
+.contact {
+	overflow: auto;
+}
+
+.title {
+	left: 100px;
+	position: relative;
+	height: 100px;
+	margin-right: 100px;
+	border-bottom: 1px solid #D7D7D7;
+	border-right: 1px solid #D7D7D7;
+	padding-left: 10px;
+
+}
+h1 {
+	background-color: #858585;
+	color: white;
+	padding: 20px;
+}
+h3 {
+	background-color: #D6D6D6;
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	line-height: 100px;
+	position: absolute;
+}
