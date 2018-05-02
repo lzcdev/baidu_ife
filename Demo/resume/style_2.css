@@ -4,6 +4,7 @@
 }
 .bg {
 	padding: 20px;
+	position: relative;
 }
 ul, li {
 	list-style: none;
@@ -19,16 +20,19 @@ ul, li {
 	overflow: auto;
 }
 h1 {
-	float: left;
+	/*float: left;*/
 	background-color: #69A7F8;
 	color: white;
 	width: 200px;
 	padding-top: 50px;
 	text-align: center;
-	height: 100%;
+	position: absolute;
+	bottom: 0;
+	top: 0;
 
 }
 .ul {
-	float: left;
+	left: 200px;
 	margin-left: 20px;
+	position: relative;
 }
