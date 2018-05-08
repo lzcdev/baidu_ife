@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Complex flexbox example</title>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .wrapper {
+
+      }
+
+      header {
+        background-color: #333333;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+      }
+      header .content {
+        width: 960px;
+        display: flex;
+        justify-content: space-between;
+        
+      }
+      header .content .logo{
+          color: white;
+          margin-left: 100px; 
+          margin-top: 20px;
+          font-size: 20px;
+
+      }
+      header .content ul{
+        list-style: none;
+        margin-top: 0;
+      }
+      header .content ul li a{
+        color: white;
+      }  
+      header .content ul li {
+        float: left;
+        margin-left: 10px;
+      }   
+      .banner {
+        /*margin-top: 0;*/
+        background-color: #68B73C;
+        height: 200px;
+        position: relative;
+      }  
+      .banner ul {
+        list-style: none;
+        display: inline-block;
+        position: absolute;
+        right: 80px;
+        bottom: 0;
+        display: flex;
+        align-items: flex-end;
+
+      }
+      .banner ul li {
+        display: inline-block;
+        width: 20px;
+        height: 30px;
+        margin: 3px;
+        background-color: #B3DC9C;
+        color: #648D4D;
+        border: 1px solid #5A794B;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+      }
+      .banner ul li:nth-child(2) {
+        height: 40px;
+        line-height: 40px;
+        background-color: #E0F0D7;
+      }
+      footer {
+        background-color: #666666;
+        height: 100px;
+        text-align:center;
+        color: white;
+        padding-top: 10px;
+      }
+
+      .middle_content {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+      }
+
+      .main_content {
+        width: 960px;
+        /*background-color: purple;*/
+      }
+      .main_content div div{
+        padding: 80px;
+        height: 20px;
+        margin: 5px;
+        border: 1px solid #EBEBEB;
+
+      }
+      .row_first {
+        display: flex;
+      }
+      .row_second,
+      .row_third {
+        display: flex;
+      }
+      .row_third div{
+        /*display: flex;*/
+        flex: 1 1 auto;
+        /*background-color: red;*/
+      }
+      .content1,
+      .content2 {
+        flex: 2 1 auto;
+      }
+      .content3 {
+        flex: 1 1 auto;
+      }
+      .menu {
+
+      }
+      .menu ul {
+        list-style: none;
+        display: flex;
+        /*background-color: yellow;*/
+        margin-bottom: 0;
+      }
+      .menu ul li {
+        padding: 10px 15px;
+        border: 1px solid #D1D1D1;
+        background-color: #EEEEEE;
+        border-top-left-radius:10px;
+        border-top-right-radius:10px;
+      }
+      .menu ul li:nth-child(1) {
+        background-color: white;
+      }
+      .line {
+        background-color: #E1E1E1;
+        width: 100%;
+        height: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="content">
+          <div class="logo">Logo</div>
+          <ul>
+            <li><a href="">Github</a></li>
+            <li><a href="">Register</a></li>
+            <li><a href="">Login</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="banner">
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+        </ul>
+     
+      </div>
+
+<div class="menu">
+   <ul >
+            <li>HOME</li>
+            <li>PROFILE</li>
+            <li>ABOUT</li>
+          </ul>
+             <div class="line"></div>
+</div>
+         
+
+      <div class="middle_content">
+       
+          <div class="main_content">
+            <div class="row_first">
+              <div class="content1">This is Content1</div>
+              <div class="content2">MaybeContent2</div>
+              <div class="content3">Content3</div>
+            </div>
+
+            <div class="row_second">
+               <div>Content4</div>
+               <div>Content5</div>
+               <div>Content6</div>
+              <div>Content7</div>
+            </div>
+
+            <div class="row_third">
+              <div>Content8</div>
+              <div>Content9</div>
+             <div>Content10</div>
+            </div>
+
+          </div>
+      </div>
+      <footer>
+        @2018 ife.baidu.com
+      </footer>
+
+    </div>
+
+  </body>
+</html>
