@@ -220,4 +220,27 @@ header .frame .login button {
 .fifth .fifth_two .text p {
 	margin-top: 20px;
 }
+footer {
+	background-color: black;
+}
+footer ul {
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+	background-color: black;
+	/*color: white;*/
+}
+footer ul li {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	/*background-color: black;*/
 
+}
+footer ul button {
+	border: none;
+	padding: 10px;
+	text-align: left;
+	background-color: black;
+	color: white;
+}
