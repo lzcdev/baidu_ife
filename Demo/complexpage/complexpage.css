@@ -176,6 +176,7 @@ body,
     overflow-y: auto;
     bottom: 0;
     display: flex;
+    right: 0;
 }
 
 .content .search {
@@ -238,9 +239,28 @@ body,
 	margin-right: 20px;
 	border-radius: 50%;
 }
+.message {
+	width: 100%;
+}
 .message .header {
 	height: 66px;
+	width: 100%;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	border-bottom-color: #E7EAEC;
+	/*background-color: orange;*/
+}
+.message .header ul {
+	list-style: none;
+	display: flex;
+
+}
+.message .header ul li {
+	width: 20px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid green;
+
 }
