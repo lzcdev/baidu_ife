@@ -13,6 +13,11 @@
             <button>Style2</button>
             <button>Style3</button>
         </section>
+  	
+  	<br />
+  
+    <button id="btn">点我有惊喜</button>
+    <p id="nothing" style="color: red;"></p>
 
 	<div class="bg">
 		<h1>简历</h1>
@@ -83,6 +88,9 @@
             item.onclick=function() {
                 link.href = `./style_${index+1}.css`;
             }
+        }
+        document.getElementById("btn").onclick = function() {
+        	document.getElementById("nothing").innerHTML = "是的，什么惊喜也没有，这是第16天的JS练习";
         }
     </script>
 </body>
