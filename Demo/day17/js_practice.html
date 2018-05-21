@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>        
+
+    <button id="three-btn">3的小游戏</button>
+    <button id="times-btn">99乘法表</button>
+    <button id="metting-btn">问候语</button>
+
+    <p id="result">运算结果</p>
+
+   <table id= "times-table" border="1" cellpadding="10" style="border: 1px #ccc solid;">
+      <script type="text/javascript">
+             for (var i = 1; i < 10; i++) {
+                document.write("<tr>")
+                for (var j = 1; j < 10; j++) {
+                    console.log(i + '*' + j + '=' + i * j)
+                    document.write("<td>" + i + "*" + j + "=" + i * j + "</td>")
+                }
+                document.write("</tr>")
+             }
+    </script>
+  
+            
+     </table>       
+    <script>
+
+        function forCircle() {
+         for(var i = 1; i <= 100; i++) {
+                if(i % 3 == 0) {
+                    console.log('PA')
+                } else {
+                    console.log(i)
+                }
+            }
+        }
+        function whileCircle() {
+            var i = 1
+            while(i < 101) {
+              if(i % 3 == 0) {
+                    console.log('PA')
+                } else {
+                    console.log(i)
+                }
+                i++;
+            }
+        }
+
+
+        // 3的小游戏
+        document.getElementById("three-btn").onclick = function() {
+            whileCircle()
+        }
+        // 99乘法表
+        document.getElementById("times-btn").onclick = function() {
+         
+            for (var i = 1; i < 10; i++) {
+                document.write("<tr>")
+                for (var j = 1; j < 10; j++) {
+                    console.log(i + '*' + j + '=' + i * j)
+                }
+            }
+        }
+
+           /**
+     * 判断当前网络时间段
+     */
+    function checkAuditTime(){
+        var nowDate= new Date()
+        var beginDate=new Date(nowDate);
+        var endDate=new Date(nowDate);
+        beginDate.setHours(6, 0, 0, 0);
+        endDate.setHours(18, 0, 0, 0);
+        if(nowDate.getTime()-beginDate.getTime()>=0 && nowDate.getTime() <= endDate.getTime()){
+            document.getElementById("result").innerHTML = '这是白天'
+ 
+        }else{
+             document.getElementById("result").innerHTML = '这是晚上'
+        }
+    }
+        // 问候语
+        document.getElementById("metting-btn").onclick = function() {
+           checkAuditTime()
+        }
+
+    </script>
+</body>
+</html>
