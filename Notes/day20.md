@@ -1,4 +1,4 @@
-[demo地址](https://lzcdev.github.io/baidu_ife/Demo/day20/spride.html)
+[demo地址](https://lzcdev.github.io/baidu_ife/Demo/day20/sprite.html)
 
 
 #### JavaScript 的事件机制、事件代理
