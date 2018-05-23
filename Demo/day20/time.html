@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>time</title>
+</head>
+
+<body>
+    <div id="fade-obj" style="width:300px;height:300px;background:#000"></div>
+    <button id="fade-btn">淡出</button>
+    <script type="text/javascript">
+    var obj = document.getElementById('fade-obj')
+    var btn = document.getElementById('fade-btn')
+    var opacity = 1
+   
+    fadein = function() {
+        opacity = opacity - 0.01
+        obj.style.opacity = opacity;
+        btn.disabled = true
+        console.log(opacity)
+        if (opacity <= 0) {
+            btn.disabled = false
+            btn.innerHTML = '淡入'
+            clearInterval(btn_fadein)
+        }
+    }
+      fadeout = function() {
+        opacity = opacity + 0.01
+        obj.style.opacity = opacity;
+        btn.disabled = true
+        console.log(opacity)
+        if (opacity >= 1) {
+            btn.disabled = false
+            btn.innerHTML = '淡出'
+            clearInterval(btn_fadeout)
+        }
+    }
+    var btn_fadein, btn_fadeout; 
+
+    document.querySelector('button').onclick = function() {
+    	console.log(btn.innerText)
+    	if (btn.innerText == '淡出') {
+    		btn_fadein = setInterval(fadein, 10)
+    	} else {
+    		btn_fadeout = setInterval(fadeout, 10)
+    	}
+    }
+    </script>
+</body>
+
+</html>

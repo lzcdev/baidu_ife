@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>day20</title>
+</head>
+<body>
+	<input id="name" type="text" name="">
+	<button id="submit-btn">Submit</button>
+
+	<script type="text/javascript">
+		document.querySelector('button').onclick = function() {
+			console.log(document.querySelector('input').value)
+		}
+		document.querySelector('input').onchange = function() {
+			console.log(document.querySelector('input').value)		
+		}
+		document.querySelector('input').onkeydown = function(event) {
+			var x = event.keyCode
+			if (x == 27) {
+				document.querySelector('input').value = ''	
+			}
+		}
+
+	
+	</script>
+</body>
+</html>

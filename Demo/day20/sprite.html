@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Sprite</title>
+</head>
+<style type="text/css">
+<style>
+.box {
+    width: 600px;
+    height: 600px;
+    background-color: red;
+}
+
+li {
+    display: inline-block;
+    width: 480px;
+    height: 480px;
+    background-image: url(sprite.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+}
+
+.icon1 {
+    background-position: 0 0;
+}
+
+.icon2 {
+    background-position: 0 -480px;
+}
+
+.icon3 {
+    background-position: 0 -960px;
+}
+
+.icon4 {
+    background-position: 0 -1440px;
+}
+
+.icon5 {
+    background-position: 0 -1920px;
+}
+
+.icon6 {
+    background-position: 0 -2400px;
+}
+
+.icon7 {
+    background-position: 0 -2880px;
+}
+
+.icon8 {
+    background-position: 0 -3360px;
+}
+
+.icon9 {
+    background-position: 0 -3840px;
+}
+
+.icon10 {
+    background-position: 0 -4320px;
+}
+
+.icon11 {
+    background-position: 0 -4800px;
+}
+
+.icon12 {
+    background-position: 0 -5280px;
+}
+
+.icon13 {
+    background-position: 0 -5760px;
+}
+
+.icon14 {
+    background-position: 0 -6240px;
+}
+
+.icon15 {
+    background-position: 0 -6720px;
+}
+
+.icon16 {
+    background-position: 0 -7200px;
+}
+
+.icon17 {
+    background-position: 0 -7680px;
+}
+</style>
+
+<body>
+    <ul>
+        <li class="icon1"></li>
+        <li class="icon2"></li>
+        <li class="icon3"></li>
+        <li class="icon4"></li>
+        <li class="icon5"></li>
+        <li class="icon6"></li>
+        <li class="icon7"></li>
+        <li class="icon8"></li>
+        <li class="icon9"></li>
+        <li class="icon10"></li>
+        <li class="icon11"></li>
+        <li class="icon12"></li>
+        <li class="icon13"></li>
+        <li class="icon14"></li>
+        <li class="icon15"></li>
+        <li class="icon16"></li>
+        <li class="icon17"></li>
+    </ul>
+</body>
+<script type="text/javascript">
+var li = document.querySelectorAll('li')
+
+var count = 0 // 第几张
+var index = 1 // 每次循环z-index都加1，始终保持在最上面
+var positive = true // 正循环还是返循环
+
+setInterval(function() {
+    console.log(count)
+    index++
+    if (positive) {
+        li[count].style.zIndex = index
+        count++
+        if (count == li.length) {
+            count = 16
+            positive = false
+        }
+    } else {
+        li[count].style.zIndex = index
+        count--
+        if (count == 0) {
+           positive = true
+        }
+    }
+
+}, 100);
+</script>
+
+</html>
