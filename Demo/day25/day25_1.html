@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Day25</title>
+</head>
+
+<body>
+    <p class="clock"></p>
+    <p class="clock1"></p>
+    <script type="text/javascript">
+    function Go() {
+        console.log("1次Go");
+    }
+
+    function GoSteps(n) {
+
+        if (Number(n) <= 0 || isNaN(n)) {
+            console.log('0次go')
+        } else if (!n) {
+            Go()
+        } else {
+            n = Math.floor(n)
+            while (n != 0) {
+                Go()
+                n--
+            }
+        }
+
+    }
+
+    GoSteps(10); // Go 10次
+    GoSteps(1); // Go 1次
+    GoSteps(); // Go 1次，认为缺少参数时，默认参数为1
+    GoSteps(0); // 0次
+    GoSteps(-1); // 0次
+    GoSteps(1.4); // Go 1次
+    GoSteps(1.6); // Go 1次
+    GoSteps(-1); // 0次
+    GoSteps(true); // Go 1次
+    GoSteps(false); // 0次
+    GoSteps("Test"); // 0次
+    GoSteps(NaN); // 0次
+    GoSteps(null); // 0次
+
+
+
+    var clock = document.querySelector('.clock')
+    var clock1 = document.querySelector('.clock1')
+
+
+    // 返回年月日
+    function getYMD() {
+        var date = new Date()
+        var year = date.getFullYear()
+        var month = date.getMonth() + 1
+        var day = date.getDate()
+        return year + '年' + month + '月' + day + '日'
+     
+    }
+
+        // 返回年月日
+    function getYMD_() {
+        var date = new Date()
+        var year = date.getFullYear()
+        var month = date.getMonth() + 1
+        var day = date.getDate()
+        return year + '-' + month + '-' + day
+    }
+
+    // 返回时分秒
+    function getClock() {
+        var date = new Date()
+        var h = date.getHours()
+        var m = date.getMinutes()
+        var s = date.getSeconds()
+        m = checkTime(m)
+        s = checkTime(s)
+        return h + ':' + m + ':' + s
+    }
+
+    // 检查加0
+    function checkTime(i) {
+        if (i < 10) {
+            i = '0' + i
+        }
+        return i
+    }
+
+    // 返回星期几
+    function getWeekDay() {
+        var date = new Date()
+        var weekday = new Array(7)
+        weekday[0] = "星期日"
+        weekday[1] = "星期一"
+        weekday[2] = "星期二"
+        weekday[3] = "星期三"
+        weekday[4] = "星期四"
+        weekday[5] = "星期五"
+        weekday[6] = "星期六"
+        return weekday[date.getDay()]
+    }
+
+    // 返回星期几
+    function getEnglishWeekDay() {
+        var date = new Date()
+        var weekday = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+        return weekday[date.getDay() - 1]
+    }
+
+    // 上午下午晚上
+    function checkCurrentTime() {
+    	   var date = new Date()
+        var h = date.getHours()
+        if (h >= 12 && h <= 18) {
+        	return 'PM'
+        } else if (h > 18 && h <= 24 || h >= 0 && h < 12) {
+        	return 'Night'
+        } else {
+        	return 'AM'
+        } 
+    }
+
+    // 包装
+    function getTime() {
+
+        clock.innerHTML = getYMD() + getWeekDay() + '  ' + getClock()
+		clock1.innerHTML = getYMD_() + '  ' + getEnglishWeekDay() + '  ' + getClock() + ' ' + checkCurrentTime()
+        t = setTimeout('getTime()', 1000)
+
+    }
+
+
+    getTime()
+    </script>
+</body>
+
+</html>
