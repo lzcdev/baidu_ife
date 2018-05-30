@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SendEmail</title>
+    <style type="text/css">
+    ul,
+    li {
+        padding: 0;
+        margin: 0;
+    }
+
+    ul {
+        list-style-type: none;
+        border: 1px solid lightgray;
+        width: 220px;
+        box-sizing: border-box;
+    }
+
+    ul li {
+        height: 30px;
+        padding-left: 10px;
+        line-height: 30px;
+    }
+
+    input {
+        width: 220px;
+        box-sizing: border-box;
+        height: 30px;
+        padding-left: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <input id="email-input" maxlength="15" type="text" style="outline: none;">
+        <ul id="email-sug-wrapper" class="email-sug">
+            <!-- <li></li> -->
+        </ul>
+    </div>
+    <script type="text/javascript">
+    var postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net']
+    var input = document.querySelector('#email-input')
+    var email_sug = document.querySelector('.email-sug')
+
+    var value = ''
+    var string = ''
+    var matchStr = ''
+    var matchList = []
+    email_sug.style.display = 'none'
+
+
+    input.oninput = function() {
+        value = input.value.trim()
+
+        if (value == '' || value == null) {
+            email_sug.style.display = 'none'
+        } else {
+            email_sug.style.display = 'block'
+            getTip()
+        }
+
+
+
+    }
+
+    function getTip() {
+        removeLi()
+        insertLi()
+        mouseover_change()
+        mouseout_change()
+        click_change()
+    }
+
+
+    // 添加li标签
+    function insertLi() {
+
+        if (value.indexOf('@') != -1 && value.split('@')[1] == '') {
+            value = value.split('@')[0]
+            for (index in postfixList) {
+                string = value + '@' + postfixList[index]
+                email_sug.innerHTML += '<li>' + string + '</li>'
+            }
+
+        } else if (value.indexOf('@') != -1 && value.split('@')[1] != '') {
+            value = value.split('@')[0]
+
+            matchStr = input.value.trim().split('@')[1]
+
+            matchList.splice(0, matchList.length);
+
+            for (index in postfixList) {
+                if (postfixList[index].match(matchStr) && postfixList[index] != '' && matchStr != '') {
+                    matchList.push(postfixList[index])
+                    // console.log(postfixList[index] + '' + matchStr)
+                } else {
+
+                }
+            }
+
+            console.log(matchList)
+            for (index in matchList) {
+                string = value + '@' + matchList[index]
+                email_sug.innerHTML += '<li>' + string + '</li>'
+            }
+
+        } else {
+            for (index in postfixList) {
+                string = value + '@' + postfixList[index]
+                email_sug.innerHTML += '<li>' + string + '</li>'
+            }
+        }
+    }
+
+    // 移除所有li标签
+    function removeLi() {
+        var li = document.querySelectorAll('li')
+        if (li) {
+            for (var i = 0; i < li.length; i++) {
+                li[i].remove()
+
+            }
+        }
+    }
+
+    // 变回白色
+    function changeLiColor() {
+        var li = document.querySelectorAll('li')
+        if (li) {
+            for (var i = 0; i < li.length; i++) {
+                li[i].style.backgroundColor = 'white'
+
+            }
+        }
+    }
+
+    // 鼠标移上去时变色
+    function mouseover_change() {
+        email_sug.onmouseover = function(e) {
+
+            changeLiColor()
+
+            var target = e.target || e.srcElement
+            if (target.nodeName.toLocaleLowerCase() == 'li') {
+
+                if (target) {
+                    target.style.backgroundColor = '#C0DDEC'
+
+                }
+            }
+        }
+    }
+
+    // 鼠标移走变回去
+    function mouseout_change() {
+
+        email_sug.onmouseout = function(e) {
+
+            var target = e.target || e.srcElement
+            if (target.nodeName.toLocaleLowerCase() == 'li') {
+
+                if (target) {
+                    target.style.backgroundColor = 'white'
+                }
+            }
+        }
+    }
+
+    // 点击事件
+    function click_change() {
+        email_sug.onclick = function(e) {
+            var target = e.target || e.srcElement
+            if (target.nodeName.toLocaleLowerCase() == 'li') {
+
+                if (target) {
+                    input.value = target.innerHTML
+
+                    console.log(target.innerHTML)
+                }
+            }
+        }
+    }
+    </script>
+</body>
+
+</html>
