@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我是精明的小卖家</title>
+</head>
+
+<body>
+    <select id="region-select">
+        <option>华东</option>
+        <option>华南</option>
+        <option>华北</option>
+    </select>
+    </br>
+    </br>
+    <div id="table-wrapper">
+        <table bgcolor="#c1c1c1" border="0" cellpadding="3" cellspacing="1" id="table">
+            <tr bgcolor="#FFF">
+                <th>商品</th>
+                <th>地区</th>
+                <th>1月</th>
+                <th>2月</th>
+                <th>3月</th>
+                <th>4月</th>
+                <th>5月</th>
+                <th>6月</th>
+                <th>7月</th>
+                <th>8月</th>
+                <th>9月</th>
+                <th>10月</th>
+                <th>11月</th>
+                <th>12月</th>
+            </tr>
+            <tr bgcolor="#FFF" id="tr_phone">
+                <td id="phone">手机</td>
+                <td>华东</td>
+                <td>120</td>
+            </tr>
+            <tr bgcolor="#FFF">
+                <td>笔记本</td>
+                <td>华东</td>
+                <td>120</td>
+            </tr>
+            <tr bgcolor="#FFF">
+                <td>智能音响</td>
+                <td>华东</td>
+                <td>120</td>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript">
+    let sourceData = [{
+        product: "手机",
+        region: "华东",
+        sale: [120, 100, 140, 160, 180, 185, 190, 210, 230, 245, 255, 270]
+    }, {
+        product: "手机",
+        region: "华北",
+        sale: [80, 70, 90, 110, 130, 145, 150, 160, 170, 185, 190, 200]
+    }, {
+        product: "手机",
+        region: "华南",
+        sale: [220, 200, 240, 250, 260, 270, 280, 295, 310, 335, 355, 380]
+    }, {
+        product: "笔记本",
+        region: "华东",
+        sale: [50, 60, 80, 110, 30, 20, 70, 30, 420, 30, 20, 20]
+    }, {
+        product: "笔记本",
+        region: "华北",
+        sale: [30, 35, 50, 70, 20, 15, 30, 50, 710, 130, 20, 20]
+    }, {
+        product: "笔记本",
+        region: "华南",
+        sale: [80, 120, 130, 140, 70, 75, 120, 90, 550, 120, 110, 100]
+    }, {
+        product: "智能音箱",
+        region: "华东",
+        sale: [10, 30, 4, 5, 6, 5, 4, 5, 6, 5, 5, 25]
+    }, {
+        product: "智能音箱",
+        region: "华北",
+        sale: [15, 50, 15, 15, 12, 11, 11, 12, 12, 14, 12, 40]
+    }, {
+        product: "智能音箱",
+        region: "华南",
+        sale: [10, 40, 10, 6, 5, 6, 8, 6, 6, 6, 7, 26]
+    }]
+
+
+    var region_select = document.querySelector('#region-select') 
+    var tr_phone = document.querySelector('#tr_phone')
+
+    console.log(phone.innerHTML)
+    region_select.onchange = function() {
+        var index = region_select.selectedIndex
+        var selectdText = region_select.options[index].value
+        console.log(selectdText)
+
+        for (var i = 0; i < sourceData.length; i++) {
+            if (sourceData[i].region == selectdText) {
+            	switch(sourceData[i].product) {
+            		case '手机': refreshFrom(sourceData[i]); break;
+            		// case '笔记本': refreshFrom(sourceData[i]); break;
+            		// case '智能音箱': refreshFrom(sourceData[i]); break;
+            		default: break;
+            	}
+                // console.log(sourceData[i])
+            }
+        }
+    }
+
+// data.sale[i]
+    function refreshFrom(data) {
+
+    	for (var i = 0; i < data.sale.length; i++) {
+   		 	tr_phone.innerHTML = "<td>"+1+"</td>"
+    		
+    	}
+        console.log(data)
+    }
+    </script>
+</body>
+
+</html>
