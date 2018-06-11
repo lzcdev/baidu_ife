@@ -14,6 +14,7 @@
     </select>
     </br>
     </br>
+  
     <div id="table-wrapper">
         <table bgcolor="#c1c1c1" border="0" cellpadding="3" cellspacing="1" id="table">
             <tr bgcolor="#FFF">
@@ -33,9 +34,9 @@
                 <th>12月</th>
             </tr>
             <tr bgcolor="#FFF" id="tr_phone">
-                <td id="phone">手机</td>
+                  <td id="phone">手机</td>
                 <td>华东</td>
-                <td>120</td>
+                <!-- <td>120</td> -->
             </tr>
             <tr bgcolor="#FFF">
                 <td>笔记本</td>
@@ -92,7 +93,7 @@
     var region_select = document.querySelector('#region-select') 
     var tr_phone = document.querySelector('#tr_phone')
 
-    console.log(phone.innerHTML)
+    console.log(tr_phone.innerHTML)
     region_select.onchange = function() {
         var index = region_select.selectedIndex
         var selectdText = region_select.options[index].value
@@ -115,10 +116,11 @@
     function refreshFrom(data) {
 
     	for (var i = 0; i < data.sale.length; i++) {
-   		 	tr_phone.innerHTML = "<td>"+1+"</td>"
+            console.log(data.sale[i])
+   		 	tr_phone.innerHTML += "<td>"+data.sale[i]+"</td>"
     		
     	}
-        console.log(data)
+        // console.log(data)
     }
     </script>
 </body>
